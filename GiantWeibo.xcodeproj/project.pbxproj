@@ -30,6 +30,7 @@
 		890C9C201CCA195A003B781E /* PopverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */; };
 		890C9C221CCA1B2B003B781E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */; };
 		890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C231CCA1C6E003B781E /* PopoverViewController.swift */; };
+		890D2F461CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890D2F451CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift */; };
 		89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A351CCF19E80093C4A7 /* NetworkTools.swift */; };
 		897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */; };
 		897CD1E31CCDAD1F00725A18 /* QRCoderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */; };
@@ -86,6 +87,7 @@
 		890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopverViewController.storyboard; sourceTree = "<group>"; };
 		890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		890C9C231CCA1C6E003B781E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		890D2F451CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionView.swift; sourceTree = "<group>"; };
 		89526A351CCF19E80093C4A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCoderViewController.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		890C9BF91CC9C3A5003B781E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				890D2F441CCF6ACE001E0AC7 /* NewFeature */,
 				89044AFB1CCF5C9A00AB8E78 /* Discover */,
 				89526A321CCF0A780093C4A7 /* OAuth */,
 				890C9BFA1CC9C3A5003B781E /* Common */,
@@ -271,6 +274,14 @@
 				897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		890D2F441CCF6ACE001E0AC7 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				890D2F451CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		89526A321CCF0A780093C4A7 /* OAuth */ = {
@@ -505,6 +516,7 @@
 				89044AFA1CCF5C5C00AB8E78 /* DiscoverTableViewController.swift in Sources */,
 				897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */,
 				890C9C021CC9C441003B781E /* MainViewController.swift in Sources */,
+				890D2F461CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift in Sources */,
 				890C9C081CC9C61F003B781E /* MessageTableViewController.swift in Sources */,
 				890C9C171CCA0C45003B781E /* UIBarButtonItem+Category.swift in Sources */,
 				890C9C151CC9F6F9003B781E /* UIView+AutoLayout.swift in Sources */,

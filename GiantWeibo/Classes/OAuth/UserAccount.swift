@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 // Swift2.0 打印对象需要重写CustomStringConvertible协议中的description
 class UserAccount: NSObject , NSCoding{
@@ -26,17 +27,25 @@ class UserAccount: NSObject , NSCoding{
  /// 当前授权用户的UID。
     var uid:String?
     
-
+    var profile_image_urll: String?
+    
+    var screen_name: String?
+    
+    var  avatar_large: String?
+    
+    override init() {
+        
+    }
+    
     init(dict: [String: AnyObject])
     {
         super.init()
         /*
         access_token = dict["access_token"] as? String
-        // 注意: 如果直接赋值, 不会调用didSet
+        // 注意: 如果直接赋值, 不会调用didSet 如果是在初始化的时候赋值不会调用didSet
         expires_in = dict["expires_in"] as? NSNumber
         uid = dict["uid"] as? String
         */
-
         setValuesForKeysWithDictionary(dict)
     }
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
@@ -45,11 +54,39 @@ class UserAccount: NSObject , NSCoding{
     
     override var description: String{
         // 1.定义属性数组
-        let properties = ["access_token", "expires_in", "uid"]
+        let properties = ["access_token", "expires_in", "uid","screen_name","avatar_large","expires_Date"]
         // 2.根据属性数组, 将属性转换为字典
         let dict =  self.dictionaryWithValuesForKeys(properties)
         // 3.将字典转换为字符串
         return "\(dict)"
+    }
+    
+    func loadUserInfo(finished: (account: UserAccount?,error:NSError?)->()){
+        //断言
+        assert(access_token == nil,"没有授权")
+//        assert(uid == nil,"没有")
+        let path = "2/users/show.json"
+        let params = ["access_token":access_token!,"uid":uid!]
+        
+        NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
+            
+            //1.判断字典是否有值
+            if let dict = JSON as? [String: AnyObject] {
+                self.screen_name = dict["screen_name"] as? String
+                self.avatar_large = dict["avatar_large"] as? String
+                
+                //保存用户信息
+//                self.saveAccount()
+                finished(account: self, error: nil)
+                return
+            }
+            finished(account: nil, error: nil)
+            
+            }) { (_, error) in
+                print(error)
+             finished(account: nil, error: nil)
+        }
+        
     }
     
     /**
@@ -66,9 +103,10 @@ class UserAccount: NSObject , NSCoding{
     */
     
 //    let filePath2 = (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last! as NSString).stringByAppendingPathComponent("account.plist")
+    static let filePath = "account.plist".cacheDir()
     func saveAccount()
     {
-        NSKeyedArchiver.archiveRootObject(self, toFile: "account.plist".cacheDir())
+        NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.filePath)
     }
     
     /// 加载授权模型
@@ -81,7 +119,7 @@ class UserAccount: NSObject , NSCoding{
             return account
         }
         // 2.加载授权模型
-        account =  NSKeyedUnarchiver.unarchiveObjectWithFile("account.plist".cacheDir()) as? UserAccount
+        account =  NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
         
         // 3.判断授权信息是否过期
         // 2020-09-08 03:49:39                       2020-09-09 03:49:39
@@ -103,6 +141,8 @@ class UserAccount: NSObject , NSCoding{
         aCoder.encodeObject(expires_in, forKey: "expires_in")
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(expires_Date, forKey: "expires_Date")
+        aCoder.encodeObject(screen_name,forKey: "screen_name")
+        aCoder.encodeObject(avatar_large,forKey: "avatar_large")
     }
     // 从文件中读取对象
     required init?(coder aDecoder: NSCoder)
@@ -111,5 +151,7 @@ class UserAccount: NSObject , NSCoding{
         expires_in = aDecoder.decodeObjectForKey("expires_in") as? NSNumber
         uid = aDecoder.decodeObjectForKey("uid") as? String
         expires_Date = aDecoder.decodeObjectForKey("expires_Date") as? NSDate
+        screen_name = aDecoder.decodeObjectForKey("screen_name") as? String
+        avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
     }
 }

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         //设置根视图
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = NewfeatureCollectionView()
         //可视化
         window?.makeKeyAndVisible()
 
