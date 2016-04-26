@@ -56,7 +56,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55294117649999996" green="0.2163374471" blue="0.40992303289999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="09K-m5-pF7" firstAttribute="height" secondItem="4Wj-l7-aR1" secondAttribute="height" id="0U0-zY-xNt"/>
                                     <constraint firstItem="09K-m5-pF7" firstAttribute="centerX" secondItem="4Wj-l7-aR1" secondAttribute="centerX" id="1Yh-x6-7k4"/>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vy-fP-Olz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-420"/>
+            <point key="canvasLocation" x="462" y="-493"/>
         </scene>
     </scenes>
     <resources>

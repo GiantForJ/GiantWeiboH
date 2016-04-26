@@ -45,10 +45,20 @@ class BaseTableViewController: UITableViewController,VisitorViewDelegate {
     
     func loginBtnWillClick() {
         print(#function)
+        
+        //1.弹出登录界面
+        let oauthVC = OAuthViewController()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        
+        presentViewController(nav, animated: true, completion: nil)
+        
     }
     
     func registerBtnWillClick() {
         print(#function)
+        
+//        print(NetworkTools.shareNetworkTools())
+//        NSData(CFDateGetTimeIntervalSinceDate(theDate: CFDate!, otherDate: CFDate!)
     }
     
 }

@@ -27,6 +27,9 @@
 		890C9C201CCA195A003B781E /* PopverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */; };
 		890C9C221CCA1B2B003B781E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */; };
 		890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C231CCA1C6E003B781E /* PopoverViewController.swift */; };
+		89526A341CCF0AA30093C4A7 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */; };
+		89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A351CCF19E80093C4A7 /* NetworkTools.swift */; };
+		89526A381CCF2F3E0093C4A7 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A371CCF2F3E0093C4A7 /* UserAccount.swift */; };
 		897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */; };
 		897CD1E31CCDAD1F00725A18 /* QRCoderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */; };
 		897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */; };
@@ -79,6 +82,9 @@
 		890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopverViewController.storyboard; sourceTree = "<group>"; };
 		890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		890C9C231CCA1C6E003B781E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		89526A351CCF19E80093C4A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		89526A371CCF2F3E0093C4A7 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCoderViewController.storyboard; sourceTree = "<group>"; };
 		897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCoderViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		890C9BF91CC9C3A5003B781E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89526A321CCF0A780093C4A7 /* OAuth */,
 				890C9BFA1CC9C3A5003B781E /* Common */,
 				890C9BFB1CC9C3A5003B781E /* Discover */,
 				890C9BFC1CC9C3A5003B781E /* Home */,
@@ -238,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				890C9C141CC9F6F9003B781E /* UIView+AutoLayout.swift */,
+				89526A351CCF19E80093C4A7 /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -260,6 +268,15 @@
 				897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		89526A321CCF0A780093C4A7 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */,
+				89526A371CCF2F3E0093C4A7 /* UserAccount.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		897CD1E11CCDAD0C00725A18 /* QRCode */ = {
@@ -361,6 +378,7 @@
 				TargetAttributes = {
 					890C9BC71CC9BEEF003B781E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NLJYPSHKU7;
 					};
 					890C9BDB1CC9BEF0003B781E = {
 						CreatedOnToolsVersion = 7.3;
@@ -478,12 +496,15 @@
 				890C9C0A1CC9C63C003B781E /* ProfileTableViewController.swift in Sources */,
 				890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */,
 				890C9C041CC9C45F003B781E /* HomeTableViewController.swift in Sources */,
+				89526A381CCF2F3E0093C4A7 /* UserAccount.swift in Sources */,
 				890C9C111CC9EFF8003B781E /* BaseTableViewController.swift in Sources */,
+				89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */,
 				897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */,
 				890C9C021CC9C441003B781E /* MainViewController.swift in Sources */,
 				890C9C081CC9C61F003B781E /* MessageTableViewController.swift in Sources */,
 				890C9C171CCA0C45003B781E /* UIBarButtonItem+Category.swift in Sources */,
 				890C9C151CC9F6F9003B781E /* UIView+AutoLayout.swift in Sources */,
+				89526A341CCF0AA30093C4A7 /* OAuthViewController.swift in Sources */,
 				897CD2211CCDEE5900725A18 /* QRcodeCardViewController.swift in Sources */,
 				890C9C061CC9C517003B781E /* DiscoverTableViewController.swift in Sources */,
 				897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */,
@@ -616,6 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GiantWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -633,6 +655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GiantWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

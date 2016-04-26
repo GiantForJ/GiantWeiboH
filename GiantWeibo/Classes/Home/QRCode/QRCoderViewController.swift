@@ -50,8 +50,8 @@ class QRCoderViewController: UIViewController ,UITabBarDelegate
     }
     
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         //1.开始冲击波动画
         stareAnimation()
         
@@ -96,19 +96,19 @@ class QRCoderViewController: UIViewController ,UITabBarDelegate
     
     private func stareAnimation(){
         //让约束从顶部开始
-        self.scanLineCons.constant = -self.containerHeightCons.constant
-        self.scamlineView.layoutIfNeeded()
+        scanLineCons.constant = -containerHeightCons.constant
+        view.layoutIfNeeded()
         
         //执行冲击波动画
         UIView.animateWithDuration(2.0) {
             
-            
-            //1.修改约束
-            self.scanLineCons.constant = self.containerHeightCons.constant
             //设置动画指定的次数
             UIView.setAnimationRepeatCount(MAXFLOAT)
+            //1.修改约束
+            self.scanLineCons.constant = self.containerHeightCons.constant
+          
             //2.强制更新界面
-            self.scamlineView.layoutIfNeeded()
+            self.view.layoutIfNeeded()
         }
 
     }
