@@ -5,3 +5,5 @@ pod "AFNetworking"
 
 pod "SDWebImage"
 
+pod "SVProgressHUD"
+

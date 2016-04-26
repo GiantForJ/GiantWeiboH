@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OAuthViewController: UIViewController {
 
@@ -97,10 +98,18 @@ extension OAuthViewController:UIWebViewDelegate{
         return false
     }
     
+    func webViewDidStartLoad(webView: UIWebView) {
+        //提示用户正在加载
+        SVProgressHUD.showInfoWithStatus("正在加载", maskType: SVProgressHUDMaskType.Black)
+        
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
     /**
      换区accessToken
-     
-     - parameter code: 已经授权的accessToken  
+    - parameter code: 已经授权的accessToken
      */
     private func loadAccessToken(code: String){
         //1.定义路径
@@ -120,9 +129,11 @@ extension OAuthViewController:UIWebViewDelegate{
              plist:只能存储系统自带的数据类型
              将对象转换为json之后写入文件中
              */
-            let account = UserAccount(dict: JSON as! [String:AnyObject])
-            print(account)
+            let account:UserAccount = UserAccount(dict: JSON as! [String:AnyObject])
             
+            //2.归档模型
+            account.saveAccount()
+           
             }) { (_, error) in
                 print(error)
         }

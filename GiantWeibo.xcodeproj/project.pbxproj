@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B3E7B1A326BFDA7A2C8BB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D6D51766CCDF65CADD295E /* Pods.framework */; };
+		89044AEC1CCF48BF00AB8E78 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89044AEB1CCF48BF00AB8E78 /* String+Category.swift */; };
 		890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9BCB1CC9BEEF003B781E /* AppDelegate.swift */; };
 		890C9BD31CC9BEEF003B781E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890C9BD21CC9BEEF003B781E /* Assets.xcassets */; };
 		890C9BE11CC9BEF0003B781E /* GiantWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9BE01CC9BEF0003B781E /* GiantWeiboTests.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		4536AE5FD056DC63727D7E39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		54A6862B2C3BFC73D7B18621 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		89044AEB1CCF48BF00AB8E78 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		890C9BC81CC9BEEF003B781E /* GiantWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiantWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		890C9BCB1CC9BEEF003B781E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		890C9BD21CC9BEEF003B781E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				890C9C141CC9F6F9003B781E /* UIView+AutoLayout.swift */,
 				89526A351CCF19E80093C4A7 /* NetworkTools.swift */,
+				89044AEB1CCF48BF00AB8E78 /* String+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */,
 				890C9C131CC9F2F5003B781E /* VisitorView.swift in Sources */,
 				890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */,
+				89044AEC1CCF48BF00AB8E78 /* String+Category.swift in Sources */,
 				890C9C1B1CCA0E43003B781E /* TitleButton.swift in Sources */,
 				890C9C0F1CC9CB79003B781E /* NullViewController.swift in Sources */,
 			);

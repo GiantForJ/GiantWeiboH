@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController,VisitorViewDelegate {
 
     //定义一个变量保存用户是否登录
-    var userLogin = false
+    var userLogin = UserAccount.userLogin()
     //定义属性保存未登录界面
     var viditorView: VisitorView?
     override func loadView() {
@@ -56,7 +56,7 @@ class BaseTableViewController: UITableViewController,VisitorViewDelegate {
     
     func registerBtnWillClick() {
         print(#function)
-        
+        print(UserAccount.loadAccount())
 //        print(NetworkTools.shareNetworkTools())
 //        NSData(CFDateGetTimeIntervalSinceDate(theDate: CFDate!, otherDate: CFDate!)
     }
