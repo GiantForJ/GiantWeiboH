@@ -15,6 +15,8 @@ class HomeTableViewController: BaseTableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AFHTTPSessionManager()
+        
         //1.如果没有登录  设置未登录界面的信息
         if !userLogin {
             viditorView?.setupVisiorInfo(true, imageName:"visitordiscover_feed_image_house", message: "看看吧")
