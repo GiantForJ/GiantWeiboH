@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		13B3E7B1A326BFDA7A2C8BB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D6D51766CCDF65CADD295E /* Pods.framework */; };
 		89044AEC1CCF48BF00AB8E78 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89044AEB1CCF48BF00AB8E78 /* String+Category.swift */; };
+		89044AF31CCF5B8800AB8E78 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89044AF11CCF5B8800AB8E78 /* OAuthViewController.swift */; };
+		89044AF41CCF5B8800AB8E78 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89044AF21CCF5B8800AB8E78 /* UserAccount.swift */; };
+		89044AFA1CCF5C5C00AB8E78 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89044AF91CCF5C5C00AB8E78 /* DiscoverTableViewController.swift */; };
 		890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9BCB1CC9BEEF003B781E /* AppDelegate.swift */; };
 		890C9BD31CC9BEEF003B781E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890C9BD21CC9BEEF003B781E /* Assets.xcassets */; };
 		890C9BE11CC9BEF0003B781E /* GiantWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9BE01CC9BEF0003B781E /* GiantWeiboTests.swift */; };
 		890C9BEC1CC9BEF0003B781E /* GiantWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9BEB1CC9BEF0003B781E /* GiantWeiboUITests.swift */; };
 		890C9C021CC9C441003B781E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C011CC9C441003B781E /* MainViewController.swift */; };
 		890C9C041CC9C45F003B781E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C031CC9C45F003B781E /* HomeTableViewController.swift */; };
-		890C9C061CC9C517003B781E /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C051CC9C517003B781E /* DiscoverTableViewController.swift */; };
 		890C9C081CC9C61F003B781E /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C071CC9C61F003B781E /* MessageTableViewController.swift */; };
 		890C9C0A1CC9C63C003B781E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C091CC9C63C003B781E /* ProfileTableViewController.swift */; };
 		890C9C0E1CC9CB79003B781E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 890C9C0C1CC9CB79003B781E /* MainVCSettings.json */; };
@@ -28,9 +30,7 @@
 		890C9C201CCA195A003B781E /* PopverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */; };
 		890C9C221CCA1B2B003B781E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */; };
 		890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C231CCA1C6E003B781E /* PopoverViewController.swift */; };
-		89526A341CCF0AA30093C4A7 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */; };
 		89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A351CCF19E80093C4A7 /* NetworkTools.swift */; };
-		89526A381CCF2F3E0093C4A7 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A371CCF2F3E0093C4A7 /* UserAccount.swift */; };
 		897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */; };
 		897CD1E31CCDAD1F00725A18 /* QRCoderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */; };
 		897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */; };
@@ -59,6 +59,9 @@
 		4536AE5FD056DC63727D7E39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		54A6862B2C3BFC73D7B18621 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		89044AEB1CCF48BF00AB8E78 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
+		89044AF11CCF5B8800AB8E78 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		89044AF21CCF5B8800AB8E78 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		89044AF91CCF5C5C00AB8E78 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewController.swift; path = ../../../../../../Documents/DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		890C9BC81CC9BEEF003B781E /* GiantWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiantWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		890C9BCB1CC9BEEF003B781E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		890C9BD21CC9BEEF003B781E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		890C9BED1CC9BEF0003B781E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		890C9C011CC9C441003B781E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		890C9C031CC9C45F003B781E /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		890C9C051CC9C517003B781E /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverTableViewController.swift; path = ../Home/DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		890C9C071CC9C61F003B781E /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		890C9C091CC9C63C003B781E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		890C9C0C1CC9CB79003B781E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
@@ -84,9 +86,7 @@
 		890C9C1F1CCA195A003B781E /* PopverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopverViewController.storyboard; sourceTree = "<group>"; };
 		890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		890C9C231CCA1C6E003B781E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		89526A351CCF19E80093C4A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
-		89526A371CCF2F3E0093C4A7 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCoderViewController.storyboard; sourceTree = "<group>"; };
 		897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCoderViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89044AFB1CCF5C9A00AB8E78 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				89044AF91CCF5C5C00AB8E78 /* DiscoverTableViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
 		890C9BBF1CC9BEEF003B781E = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +185,9 @@
 		890C9BF91CC9C3A5003B781E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89044AFB1CCF5C9A00AB8E78 /* Discover */,
 				89526A321CCF0A780093C4A7 /* OAuth */,
 				890C9BFA1CC9C3A5003B781E /* Common */,
-				890C9BFB1CC9C3A5003B781E /* Discover */,
 				890C9BFC1CC9C3A5003B781E /* Home */,
 				890C9BFD1CC9C3A5003B781E /* Main */,
 				890C9BFE1CC9C3A5003B781E /* Message */,
@@ -196,14 +204,6 @@
 				890C9C1A1CCA0E43003B781E /* TitleButton.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		890C9BFB1CC9C3A5003B781E /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				890C9C051CC9C517003B781E /* DiscoverTableViewController.swift */,
-			);
-			path = Discover;
 			sourceTree = "<group>";
 		};
 		890C9BFC1CC9C3A5003B781E /* Home */ = {
@@ -276,8 +276,8 @@
 		89526A321CCF0A780093C4A7 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				89526A331CCF0AA30093C4A7 /* OAuthViewController.swift */,
-				89526A371CCF2F3E0093C4A7 /* UserAccount.swift */,
+				89044AF11CCF5B8800AB8E78 /* OAuthViewController.swift */,
+				89044AF21CCF5B8800AB8E78 /* UserAccount.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -499,17 +499,17 @@
 				890C9C0A1CC9C63C003B781E /* ProfileTableViewController.swift in Sources */,
 				890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */,
 				890C9C041CC9C45F003B781E /* HomeTableViewController.swift in Sources */,
-				89526A381CCF2F3E0093C4A7 /* UserAccount.swift in Sources */,
+				89044AF41CCF5B8800AB8E78 /* UserAccount.swift in Sources */,
 				890C9C111CC9EFF8003B781E /* BaseTableViewController.swift in Sources */,
 				89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */,
+				89044AFA1CCF5C5C00AB8E78 /* DiscoverTableViewController.swift in Sources */,
 				897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */,
 				890C9C021CC9C441003B781E /* MainViewController.swift in Sources */,
 				890C9C081CC9C61F003B781E /* MessageTableViewController.swift in Sources */,
 				890C9C171CCA0C45003B781E /* UIBarButtonItem+Category.swift in Sources */,
 				890C9C151CC9F6F9003B781E /* UIView+AutoLayout.swift in Sources */,
-				89526A341CCF0AA30093C4A7 /* OAuthViewController.swift in Sources */,
 				897CD2211CCDEE5900725A18 /* QRcodeCardViewController.swift in Sources */,
-				890C9C061CC9C517003B781E /* DiscoverTableViewController.swift in Sources */,
+				89044AF31CCF5B8800AB8E78 /* OAuthViewController.swift in Sources */,
 				897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */,
 				890C9C131CC9F2F5003B781E /* VisitorView.swift in Sources */,
 				890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */,
