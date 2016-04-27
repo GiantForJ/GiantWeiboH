@@ -63,7 +63,7 @@ class UserAccount: NSObject , NSCoding{
     
     func loadUserInfo(finished: (account: UserAccount?,error:NSError?)->()){
         //断言
-        assert(access_token == nil,"没有授权")
+//        assert(access_token == nil,"没有授权")
 //        assert(uid == nil,"没有")
         let path = "2/users/show.json"
         let params = ["access_token":access_token!,"uid":uid!]

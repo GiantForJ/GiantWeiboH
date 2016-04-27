@@ -18,5 +18,5 @@ class ProfileTableViewController: BaseTableViewController {
             viditorView?.setupVisiorInfo(false, imageName: "visitordiscover_image_pofile", message: "我")
         }
     }
-  
+    
 }

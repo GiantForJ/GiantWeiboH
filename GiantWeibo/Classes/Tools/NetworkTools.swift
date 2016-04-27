@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 class NetworkTools: AFHTTPSessionManager {
-
+    
     //常量只能赋值一次  切线程安全
     static let tools:NetworkTools = {
         //注意:baseURL一定要以/结尾
@@ -23,7 +23,7 @@ class NetworkTools: AFHTTPSessionManager {
         
     }()
     
-//    static let tools:NetworkTools = NetworkTools()
+    //    static let tools:NetworkTools = NetworkTools()
     /**
      获取单利的方法
      */
@@ -31,6 +31,6 @@ class NetworkTools: AFHTTPSessionManager {
         return tools
     }
     
-  
+    
     
 }

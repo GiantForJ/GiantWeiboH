@@ -19,5 +19,5 @@ class MessageTableViewController: BaseTableViewController {
         }
     }
     
-   
+    
 }

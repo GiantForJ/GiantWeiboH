@@ -18,7 +18,7 @@ protocol VisitorViewDelegate:NSObjectProtocol{
 }
 
 class VisitorView: UIView {
-
+    
     //定义一个属性保存代理对象
     //一定要加上weak，避免循环引用
     weak var delegate:VisitorViewDelegate?
@@ -45,44 +45,44 @@ class VisitorView: UIView {
     }
     
     func loginBtnClick(){
-//        print(#function)
+        //        print(#function)
         delegate?.loginBtnWillClick()
     }
     
     func registerBtnClick(){
-//    print(#function)
+        //    print(#function)
         delegate?.registerBtnWillClick()
     }
     
-  override  init(frame: CGRect) {
+    override  init(frame: CGRect) {
         super.init(frame: frame)
         
         //1.添加子控件
-    addSubview(iconView)
-      addSubview(maskBGView)
-    addSubview(homeIcon)
-  
-    addSubview(messageLabel)
-    addSubview(loginBtn)
-    addSubview(registerBtn)
+        addSubview(iconView)
+        addSubview(maskBGView)
+        addSubview(homeIcon)
+        
+        addSubview(messageLabel)
+        addSubview(loginBtn)
+        addSubview(registerBtn)
         //2.布局子控件
-    //2.1设置背景
-    iconView.xmg_AlignInner(type: XMG_AlignType.Center, referView: self, size: nil)
-    //2.2设置房子
-    homeIcon.xmg_AlignInner(type: XMG_AlignType.Center, referView: self, size: nil)
-    
-    //2.3设置文本
-    messageLabel.xmg_AlignVertical(type: XMG_AlignType.BottomCenter, referView: iconView, size: nil)
-    
-    //"那个控件"  的 “什么属性” "等于"  "另外一个控件" 的 "什么属性" 乘以 "多少" 加上 "多少"
-    addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 224))
-  //2.4 设置按钮
-    registerBtn.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: messageLabel, size: CGSize(width: 100, height: 30),offset: CGPoint(x:0,y:20))
-    
-    loginBtn.xmg_AlignVertical(type: XMG_AlignType.BottomRight, referView: messageLabel, size: CGSize(width: 100, height: 30),offset: CGPoint(x:0,y:20))
-    //2.5设置蒙版
-    maskBGView.xmg_Fill(self)
-    
+        //2.1设置背景
+        iconView.xmg_AlignInner(type: XMG_AlignType.Center, referView: self, size: nil)
+        //2.2设置房子
+        homeIcon.xmg_AlignInner(type: XMG_AlignType.Center, referView: self, size: nil)
+        
+        //2.3设置文本
+        messageLabel.xmg_AlignVertical(type: XMG_AlignType.BottomCenter, referView: iconView, size: nil)
+        
+        //"那个控件"  的 “什么属性” "等于"  "另外一个控件" 的 "什么属性" 乘以 "多少" 加上 "多少"
+        addConstraint(NSLayoutConstraint(item: messageLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 224))
+        //2.4 设置按钮
+        registerBtn.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: messageLabel, size: CGSize(width: 100, height: 30),offset: CGPoint(x:0,y:20))
+        
+        loginBtn.xmg_AlignVertical(type: XMG_AlignType.BottomRight, referView: messageLabel, size: CGSize(width: 100, height: 30),offset: CGPoint(x:0,y:20))
+        //2.5设置蒙版
+        maskBGView.xmg_Fill(self)
+        
     }
     
     //Swift 推荐我们自定义一个控件  纯代码/Xib、STOR
@@ -107,19 +107,19 @@ class VisitorView: UIView {
     }
     
     //MARK: -懒加载控件
-        /// 转盘
+    /// 转盘
     private lazy var iconView :UIImageView = {
         let iv = UIImageView(image:UIImage(named: "visitordiscover_feed_image_smallicon"))
         return iv
         
     }()
-        /// 图标
+    /// 图标
     private lazy var homeIcon:UIImageView = {
         let iv = UIImageView(image:UIImage(named: "visitordiscover_feed_image_house"))
         return iv
         
     }()
-        /// 文本
+    /// 文本
     private lazy var messageLabel: UILabel = {
         let iv = UILabel()
         iv.text = "dahidag地王对爱国断供的谷大股东噶骨法陕"
@@ -128,7 +128,7 @@ class VisitorView: UIView {
         return iv
         
     }()
-        /// 登录
+    /// 登录
     private lazy var loginBtn: UIButton = {
         let  btn = UIButton()
         btn.setTitle("登录", forState: UIControlState.Normal)
@@ -138,13 +138,13 @@ class VisitorView: UIView {
         return btn
         
     }()
-        /// 注册
+    /// 注册
     private lazy var registerBtn: UIButton = {
         let  btn = UIButton()
         
         btn.setTitle("注册", forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named:"common_button_white_disable"), forState: UIControlState.Normal)
-             btn.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         
         btn.addTarget(self, action: #selector(VisitorView.registerBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn

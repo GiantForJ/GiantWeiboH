@@ -11,7 +11,7 @@ import SVProgressHUD
 
 
 class OAuthViewController: UIViewController {
-
+    
     let WB_App_Key = "23154210"
     let WB_App_Secret = "8a156454204d15c2fb375d92c7c47153"
     let WB_redirect_uri = "http://www.520it.com"
@@ -79,7 +79,7 @@ extension OAuthViewController: UIWebViewDelegate
             // 关闭界面
             close()
         }
-
+        
         return false
     }
     
@@ -94,10 +94,10 @@ extension OAuthViewController: UIWebViewDelegate
     }
     
     /**
-    换取AccessToken
-    
-    :param: code 已经授权的RequestToken
-    */
+     换取AccessToken
+     
+     :param: code 已经授权的RequestToken
+     */
     private func loadAccessToken(code: String)
     {
         // 1.定义路径
@@ -108,26 +108,28 @@ extension OAuthViewController: UIWebViewDelegate
         NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
             // 1.字典转模型
             /*
-            plist : 特点只能存储系统自带的数据类型
-            将对象转换为json之后写入文件中 --> 在公司中已经开始使用
-            偏好设置: 本质plist
-            归档 : 可以存储自定义对象
-            数据库: 用于存储大数据 , 特点效率较高
-            */
+             plist : 特点只能存储系统自带的数据类型
+             将对象转换为json之后写入文件中 --> 在公司中已经开始使用
+             偏好设置: 本质plist
+             归档 : 可以存储自定义对象
+             数据库: 用于存储大数据 , 特点效率较高
+             */
             let account = UserAccount(dict: JSON as! [String : AnyObject])
             //2.获取用户信息
             account.loadUserInfo({ (account, error) in
                 if account != nil{
-                     account?.saveAccount()
+                    account?.saveAccount()
+                    // 去欢迎界面
+                    NSNotificationCenter.defaultCenter().postNotificationName(GYSwiftRootViewControllerKey, object: false)
                 }
-               SVProgressHUD.showInfoWithStatus("网络不给力..", maskType: SVProgressHUDMaskType.Black)
+                SVProgressHUD.showInfoWithStatus("网络不给力..", maskType: SVProgressHUDMaskType.Black)
             })
             // 2.归档模型
             //加载用户信息异步，不能在这里保存用户信息
-//            account.saveAccount()
+            //            account.saveAccount()
             
-            }) { (_, error) -> Void in
-                print(error)
+        }) { (_, error) -> Void in
+            print(error)
         }
     }
 }
