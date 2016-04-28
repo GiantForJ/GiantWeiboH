@@ -9,18 +9,27 @@
 import UIKit
 import AFNetworking
 
-class HomeTableViewController: BaseTableViewController{
+let GYHomeResueIdentifier = "GYHomeResueIdentifier"
 
+class HomeTableViewController: BaseTableViewController{
+    
+    /// 保存微博数组
+    var statuses: [Statuses]?
+        {
+        didSet{
+            //当别人设置完毕数据，就刷新表格
+            tableView.reloadData()
+        }
+    }
+    
     //command+ OPTION +SHIFT + 方向键
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         //1.如果没有登录  设置未登录界面的信息
         if !userLogin {
             viditorView?.setupVisiorInfo(true, imageName:"visitordiscover_feed_image_house", message: "看看吧")
-//            return
+            //            return
         }
         
         //2.初始化导航条
@@ -29,9 +38,27 @@ class HomeTableViewController: BaseTableViewController{
         //3.注册通知，监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.change), name: XMGPopverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.change), name: XMGPopverAnimatorWillDissMiss, object: nil)
+        
+        //注册一个cell
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: GYHomeResueIdentifier)
+        //4.加载微博数据
+        loadData()
     }
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    /**
+     获取微博数据
+     */
+    private func loadData(){
+        Statuses.loadStatuses { (models, error) in
+            if error != nil {
+                return
+            }
+            self.statuses = models
+            
+        }
     }
     
     func change(){
@@ -42,28 +69,28 @@ class HomeTableViewController: BaseTableViewController{
     }
     
     private func setupNav(){
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_friendattention"), style: UIBarButtonItemStyle.Plain, target: nil, action: Selector(""))
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_friendattention"), style: UIBarButtonItemStyle.Plain, target: nil, action: Selector(""))
         /*
-//        1.左边按钮
-        let leftBtn = UIButton()
-        leftBtn.setImage(UIImage(named: "navigationbar_friendattention"), forState: UIControlState.Normal)
-        
-        leftBtn.setImage(UIImage(named: "navigationbar_friendattention_highlighted"), forState: UIControlState.Highlighted)
-        leftBtn.sizeToFit()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
-        
-        //2.右边按钮
-        // command + control + e
-        let rigthBtn = UIButton()
-        rigthBtn.setImage(UIImage(named: "navigationbar_pop"), forState: UIControlState.Normal)
-        
-        rigthBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: UIControlState.Highlighted)
-        rigthBtn.sizeToFit()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rigthBtn)
- */
-//        navigationItem.rightBarButtonItem = creatBarButtonItem("navigationbar_friendattention",target: self,action: #selector(HomeTableViewController.leftItemClick))
-//        
-//        navigationItem.leftBarButtonItem = creatBarButtonItem("navigationbar_pop",target: self,action: #selector(HomeTableViewController.rightItemClick))
+         //        1.左边按钮
+         let leftBtn = UIButton()
+         leftBtn.setImage(UIImage(named: "navigationbar_friendattention"), forState: UIControlState.Normal)
+         
+         leftBtn.setImage(UIImage(named: "navigationbar_friendattention_highlighted"), forState: UIControlState.Highlighted)
+         leftBtn.sizeToFit()
+         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+         
+         //2.右边按钮
+         // command + control + e
+         let rigthBtn = UIButton()
+         rigthBtn.setImage(UIImage(named: "navigationbar_pop"), forState: UIControlState.Normal)
+         
+         rigthBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: UIControlState.Highlighted)
+         rigthBtn.sizeToFit()
+         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rigthBtn)
+         */
+        //        navigationItem.rightBarButtonItem = creatBarButtonItem("navigationbar_friendattention",target: self,action: #selector(HomeTableViewController.leftItemClick))
+        //        
+        //        navigationItem.leftBarButtonItem = creatBarButtonItem("navigationbar_pop",target: self,action: #selector(HomeTableViewController.rightItemClick))
         //1.初始化左右的按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention",target: self,action: #selector(HomeTableViewController.leftItemClick))
         
@@ -74,16 +101,16 @@ class HomeTableViewController: BaseTableViewController{
         
         titleBtn.setTitle("帅猪猪", forState: UIControlState.Normal)
         titleBtn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
-//        titleBtn.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
-//        titleBtn.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
-//        titleBtn.sizeToFit()
+        //        titleBtn.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
+        //        titleBtn.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
+        //        titleBtn.sizeToFit()
         titleBtn.addTarget(self, action: #selector(HomeTableViewController.titleBtnClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView  = titleBtn
     }
     
     func titleBtnClick(btn:TitleButton){
         //1.修改箭头的方向
-//        btn.selected = !btn.selected
+        //        btn.selected = !btn.selected
         print(#function)
         //2.弹出菜单
         let sb = UIStoryboard(name: "PopverViewController", bundle: nil)
@@ -91,7 +118,7 @@ class HomeTableViewController: BaseTableViewController{
         //2.1设置转场代理
         //默认情况下modal回移除以前控制器的view，替换为当前弹出的view
         //如果自定义转场，那么就不去除以前控制器的view
-//        vc?.transitioningDelegate = self
+        //        vc?.transitioningDelegate = self
         vc?.transitioningDelegate = popverAnimator
         //2.2设置转场的样式
         vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -104,7 +131,7 @@ class HomeTableViewController: BaseTableViewController{
         print(#function)
     }
     func rightItemClick(){
-//        print(#function) 
+        //        print(#function) 
         let sb = UIStoryboard(name: "QRCoderViewController", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         presentViewController(vc!, animated: true, completion: nil)
@@ -138,5 +165,22 @@ class HomeTableViewController: BaseTableViewController{
         return pa
         
     }()
-  
+    
 }
+extension HomeTableViewController
+{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(GYHomeResueIdentifier)
+        let status = statuses![indexPath.row]
+        cell?.textLabel?.text = status.text
+        return cell!
+    }
+    
+    
+}
+
+

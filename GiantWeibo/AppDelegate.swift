@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// 2.004lDN3G0ATJZB63f16e6bc2Agn12C
 let GYSwiftRootViewControllerKey = "dbawuodua"
 
 @UIApplicationMain
@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = defaultController()
         //可视化
         window?.makeKeyAndVisible()
-
         isNewupdate()
         return true
     }
