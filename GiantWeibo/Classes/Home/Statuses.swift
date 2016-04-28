@@ -19,7 +19,8 @@ class Statuses: NSObject{
     var source: String?
     ///配图数组
     var pic_urls: [[String: AnyObject]]?
-    
+    /// 用户信息
+    var user: User?
     /**
      加载微博数据
      */
@@ -33,11 +34,11 @@ class Statuses: NSObject{
             //1.取出statues key对应的数组 （存储的式字典）
             //2.遍历数组  将字典转换为模型
             let models = dict2Model(JSON!["statuses"] as! [[String: AnyObject]])
-//            print(models)
+            //            print(models)
             //2.1通过闭包将数据传递给调用者
             finished(models: models, error: nil)
         }) { (_, error) in
-//            print(error)
+            //            print(error)
             finished(models: nil, error: error)
             
         }
@@ -63,9 +64,20 @@ class Statuses: NSObject{
         setValuesForKeysWithDictionary(dicr)
     }
     
+    //setValuesForKeysWithDictionary内部会调用一下方法
+    override func setValue(value: AnyObject?, forKey key: String) {
+        //1.判断当前是否正在给微博字典中的user字典赋值
+        if "user" == key {
+            //2.将userkey对应的字典创建一个模型
+            user = User(dicr: value as! [String : AnyObject])
+            return
+        }
+        super.setValue(value, forKey: key)
+//        print("key =\(key),value=\(value)")
+        
+    }
     /**
      不一一对应
-     
      */
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         

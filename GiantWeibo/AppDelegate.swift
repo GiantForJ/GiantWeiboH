@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
         //设置根视图
-        window?.rootViewController = defaultController()
+        window?.rootViewController = MainViewController()
         //可视化
         window?.makeKeyAndVisible()
         isNewupdate()

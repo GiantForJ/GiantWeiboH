@@ -31,6 +31,10 @@
 		890C9C221CCA1B2B003B781E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */; };
 		890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C9C231CCA1C6E003B781E /* PopoverViewController.swift */; };
 		890D2F461CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890D2F451CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift */; };
+		8915CB1F1CD1D76300D564D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915CB1E1CD1D76300D564D1 /* User.swift */; };
+		8915CB211CD1DBF900D564D1 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915CB201CD1DBF900D564D1 /* StatusTableViewCell.swift */; };
+		8915CB6E1CD208A500D564D1 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915CB6D1CD208A500D564D1 /* UILabel+Category.swift */; };
+		8915CB701CD208BA00D564D1 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915CB6F1CD208BA00D564D1 /* UIButton+Category.swift */; };
 		894CBDE91CD0551B007587A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CBDE81CD0551B007587A5 /* WelcomeViewController.swift */; };
 		894CBE251CD07D20007587A5 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CBE241CD07D20007587A5 /* Statuses.swift */; };
 		89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A351CCF19E80093C4A7 /* NetworkTools.swift */; };
@@ -90,6 +94,10 @@
 		890C9C211CCA1B2B003B781E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		890C9C231CCA1C6E003B781E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		890D2F451CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionView.swift; sourceTree = "<group>"; };
+		8915CB1E1CD1D76300D564D1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8915CB201CD1DBF900D564D1 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		8915CB6D1CD208A500D564D1 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
+		8915CB6F1CD208BA00D564D1 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		894CBDE81CD0551B007587A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		894CBE241CD07D20007587A5 /* Statuses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
 		89526A351CCF19E80093C4A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
@@ -209,6 +217,8 @@
 			children = (
 				890C9C161CCA0C45003B781E /* UIBarButtonItem+Category.swift */,
 				890C9C1A1CCA0E43003B781E /* TitleButton.swift */,
+				8915CB6D1CD208A500D564D1 /* UILabel+Category.swift */,
+				8915CB6F1CD208BA00D564D1 /* UIButton+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -219,7 +229,9 @@
 				897CD1E11CCDAD0C00725A18 /* QRCode */,
 				890C9C1C1CCA1634003B781E /* Popover */,
 				890C9C031CC9C45F003B781E /* HomeTableViewController.swift */,
+				8915CB201CD1DBF900D564D1 /* StatusTableViewCell.swift */,
 				894CBE241CD07D20007587A5 /* Statuses.swift */,
+				8915CB1E1CD1D76300D564D1 /* User.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -515,14 +527,17 @@
 				890C9C221CCA1B2B003B781E /* PopoverPresentationController.swift in Sources */,
 				890C9C0A1CC9C63C003B781E /* ProfileTableViewController.swift in Sources */,
 				890C9C241CCA1C6E003B781E /* PopoverViewController.swift in Sources */,
+				8915CB1F1CD1D76300D564D1 /* User.swift in Sources */,
 				890C9C041CC9C45F003B781E /* HomeTableViewController.swift in Sources */,
 				89044AF41CCF5B8800AB8E78 /* UserAccount.swift in Sources */,
 				894CBDE91CD0551B007587A5 /* WelcomeViewController.swift in Sources */,
 				890C9C111CC9EFF8003B781E /* BaseTableViewController.swift in Sources */,
 				89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */,
+				8915CB211CD1DBF900D564D1 /* StatusTableViewCell.swift in Sources */,
 				89044AFA1CCF5C5C00AB8E78 /* DiscoverTableViewController.swift in Sources */,
 				897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */,
 				890C9C021CC9C441003B781E /* MainViewController.swift in Sources */,
+				8915CB6E1CD208A500D564D1 /* UILabel+Category.swift in Sources */,
 				890D2F461CCF6AF9001E0AC7 /* NewfeatureCollectionView.swift in Sources */,
 				890C9C081CC9C61F003B781E /* MessageTableViewController.swift in Sources */,
 				894CBE251CD07D20007587A5 /* Statuses.swift in Sources */,
@@ -530,6 +545,7 @@
 				890C9C151CC9F6F9003B781E /* UIView+AutoLayout.swift in Sources */,
 				897CD2211CCDEE5900725A18 /* QRcodeCardViewController.swift in Sources */,
 				89044AF31CCF5B8800AB8E78 /* OAuthViewController.swift in Sources */,
+				8915CB701CD208BA00D564D1 /* UIButton+Category.swift in Sources */,
 				897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */,
 				890C9C131CC9F2F5003B781E /* VisitorView.swift in Sources */,
 				890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */,

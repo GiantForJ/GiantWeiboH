@@ -40,7 +40,12 @@ class HomeTableViewController: BaseTableViewController{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeTableViewController.change), name: XMGPopverAnimatorWillDissMiss, object: nil)
         
         //注册一个cell
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: GYHomeResueIdentifier)
+        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: GYHomeResueIdentifier)
+//        tableView.rowHeight = 200
+        //预估行高。tableView自动调节行高
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         //4.加载微博数据
         loadData()
     }
@@ -174,10 +179,10 @@ extension HomeTableViewController
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(GYHomeResueIdentifier)
+        let cell = tableView.dequeueReusableCellWithIdentifier(GYHomeResueIdentifier) as! StatusTableViewCell
         let status = statuses![indexPath.row]
-        cell?.textLabel?.text = status.text
-        return cell!
+        cell.statys = status
+        return cell
     }
     
     
