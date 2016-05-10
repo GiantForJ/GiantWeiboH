@@ -38,6 +38,10 @@
 		894CBDE91CD0551B007587A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CBDE81CD0551B007587A5 /* WelcomeViewController.swift */; };
 		894CBE251CD07D20007587A5 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CBE241CD07D20007587A5 /* Statuses.swift */; };
 		89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89526A351CCF19E80093C4A7 /* NetworkTools.swift */; };
+		897111D01CE17687008DBE86 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897111CF1CE17687008DBE86 /* NSDate+Category.swift */; };
+		897111D51CE1CBB3008DBE86 /* StatusTableViewBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897111D41CE1CBB3008DBE86 /* StatusTableViewBootomView.swift */; };
+		897111D71CE1CC61008DBE86 /* StatusTableViewTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897111D61CE1CC61008DBE86 /* StatusTableViewTopView.swift */; };
+		897111D91CE1CEF2008DBE86 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897111D81CE1CEF2008DBE86 /* StatusPictureView.swift */; };
 		897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */; };
 		897CD1E31CCDAD1F00725A18 /* QRCoderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */; };
 		897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */; };
@@ -101,6 +105,10 @@
 		894CBDE81CD0551B007587A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		894CBE241CD07D20007587A5 /* Statuses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
 		89526A351CCF19E80093C4A7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		897111CF1CE17687008DBE86 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		897111D41CE1CBB3008DBE86 /* StatusTableViewBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewBootomView.swift; sourceTree = "<group>"; };
+		897111D61CE1CC61008DBE86 /* StatusTableViewTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewTopView.swift; sourceTree = "<group>"; };
+		897111D81CE1CEF2008DBE86 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		897CD1DF1CCDA54500725A18 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		897CD1E21CCDAD1F00725A18 /* QRCoderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCoderViewController.storyboard; sourceTree = "<group>"; };
 		897CD1E41CCDAE7400725A18 /* QRCoderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCoderViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +238,9 @@
 				890C9C1C1CCA1634003B781E /* Popover */,
 				890C9C031CC9C45F003B781E /* HomeTableViewController.swift */,
 				8915CB201CD1DBF900D564D1 /* StatusTableViewCell.swift */,
+				897111D41CE1CBB3008DBE86 /* StatusTableViewBootomView.swift */,
+				897111D61CE1CC61008DBE86 /* StatusTableViewTopView.swift */,
+				897111D81CE1CEF2008DBE86 /* StatusPictureView.swift */,
 				894CBE241CD07D20007587A5 /* Statuses.swift */,
 				8915CB1E1CD1D76300D564D1 /* User.swift */,
 			);
@@ -269,6 +280,7 @@
 				890C9C141CC9F6F9003B781E /* UIView+AutoLayout.swift */,
 				89526A351CCF19E80093C4A7 /* NetworkTools.swift */,
 				89044AEB1CCF48BF00AB8E78 /* String+Category.swift */,
+				897111CF1CE17687008DBE86 /* NSDate+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -530,11 +542,14 @@
 				8915CB1F1CD1D76300D564D1 /* User.swift in Sources */,
 				890C9C041CC9C45F003B781E /* HomeTableViewController.swift in Sources */,
 				89044AF41CCF5B8800AB8E78 /* UserAccount.swift in Sources */,
+				897111D71CE1CC61008DBE86 /* StatusTableViewTopView.swift in Sources */,
 				894CBDE91CD0551B007587A5 /* WelcomeViewController.swift in Sources */,
 				890C9C111CC9EFF8003B781E /* BaseTableViewController.swift in Sources */,
+				897111D01CE17687008DBE86 /* NSDate+Category.swift in Sources */,
 				89526A361CCF19E80093C4A7 /* NetworkTools.swift in Sources */,
 				8915CB211CD1DBF900D564D1 /* StatusTableViewCell.swift in Sources */,
 				89044AFA1CCF5C5C00AB8E78 /* DiscoverTableViewController.swift in Sources */,
+				897111D91CE1CEF2008DBE86 /* StatusPictureView.swift in Sources */,
 				897CD1E51CCDAE7400725A18 /* QRCoderViewController.swift in Sources */,
 				890C9C021CC9C441003B781E /* MainViewController.swift in Sources */,
 				8915CB6E1CD208A500D564D1 /* UILabel+Category.swift in Sources */,
@@ -549,6 +564,7 @@
 				897CD1E01CCDA54500725A18 /* PopoverAnimator.swift in Sources */,
 				890C9C131CC9F2F5003B781E /* VisitorView.swift in Sources */,
 				890C9BCC1CC9BEEF003B781E /* AppDelegate.swift in Sources */,
+				897111D51CE1CBB3008DBE86 /* StatusTableViewBootomView.swift in Sources */,
 				89044AEC1CCF48BF00AB8E78 /* String+Category.swift in Sources */,
 				890C9C1B1CCA0E43003B781E /* TitleButton.swift in Sources */,
 				890C9C0F1CC9CB79003B781E /* NullViewController.swift in Sources */,

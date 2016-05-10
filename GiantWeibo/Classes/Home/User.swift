@@ -25,16 +25,32 @@ class User: NSObject {
     var verified: Bool = false
     var verified_type: Int = -1 {
         didSet{
-            switch ve {
-            case <#pattern#>:
-                <#code#>
+            switch verified_type {
+            case 0:
+                verifiedImage = UIImage(named: "avatar_vip")
+            case 2, 3, 5:
+                verifiedImage = UIImage(named: "avatar_enterprise_vip")
+            case 220:
+                verifiedImage = UIImage(named: "avatar_grassroot")
             default:
-                <#code#>
+                verifiedImage = nil
+                
             }
         }
     }
     //保存当前用户的认证图片
     var verifiedImage:UIImage?
+    
+    //保存当前用户的会员等级.KVC基本数据类型需要赋值，否则会无值
+    var mbrank: Int = 0
+        {
+        didSet{
+            if mbrank > 0 && mbrank < 7 {
+                mbrankImage = UIImage(named: "common_icon_membership_level" + "\(mbrank)")
+            }
+        }
+    }
+    var mbrankImage: UIImage?
     
     //字典转模型
     init(dicr: [String: AnyObject]) {
@@ -46,6 +62,7 @@ class User: NSObject {
      不一一对应
      */
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        
         
     }
     //打印当前模型
